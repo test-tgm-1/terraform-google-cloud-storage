@@ -21,7 +21,7 @@ resource "random_string" "prefix" {
 }
 
 module "cloud_storage" {
-  source     = "../.."
+  source     = "terraform-google-modules/cloud-storage/google"
   project_id = var.project_id
 
   prefix           = "multiple-buckets-${random_string.prefix.result}"
